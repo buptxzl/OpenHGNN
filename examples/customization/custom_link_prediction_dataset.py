@@ -1,5 +1,5 @@
 import torch as th
-from openhgnn.dataset import AsLinkPredictionDataset, generate_random_hg
+from openhgnn.dataset import AsLinkPredictionDataset, generate_random_hg, Amazon4GATNEDataset
 from dgl import transforms as T
 from dgl import DGLHeteroGraph
 from dgl.data import DGLDataset
@@ -122,3 +122,8 @@ if __name__ == '__main__':
                                                            target_link_r=target_link_r,
                                                            force_reload=True)
     train_with_custom_lp_dataset(mySplitLPDatasetWithNegEdges)
+
+    # use a built-in dataset of openhgnn. this is equivalent to using str 'amazon4GATNE' as dataset parameter.
+    amazon4GATNEDataset = Amazon4GATNEDataset()
+    train_with_custom_lp_dataset(AsLinkPredictionDataset(amazon4GATNEDataset, target_link=amazon4GATNEDataset.target_link,
+                                target_link_r=amazon4GATNEDataset.target_link_r))

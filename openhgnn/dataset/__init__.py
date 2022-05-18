@@ -6,6 +6,7 @@ from .academic_graph import AcademicDataset
 from .hgb_dataset import HGBDataset
 from .ohgb_dataset import OHGBDataset
 from .gtn_dataset import *
+from .gatne_dataset import *
 from .adapter import *
 
 DATASET_REGISTRY = {}
@@ -114,4 +115,7 @@ CLASS_DATASETS = {
     "dblp4GTN": "openhgnn.dataset.DBLP4GTNDataset",
     "acm4GTN": "openhgnn.dataset.ACM4GTNDataset",
     "imdb4GTN": "openhgnn.dataset.IMDB4GTNDataset",
+    "amazon4GATNE": "openhgnn.dataset.Amazon4GTNDataset",
+    "youtube4GATNE": "openhgnn.dataset.Youtube4GTNDataset",
+    "twitter4GATNE": "openhgnn.dataset.Twitter4GTNDataset",
 }
