@@ -164,7 +164,7 @@ class AsNodeClassificationDataset(DGLDataset):
         self.val_idx = F.nonzero_1d(ndata['val_mask'])
         self.test_idx = F.nonzero_1d(ndata['test_mask'])
 
-    def get_split(self):
+    def get_split(self, *args, **kwargs):
         return self.train_idx, self.val_idx, self.test_idx
 
     def get_labels(self):
